@@ -91,6 +91,7 @@ void *handlerClient(void *arg)
     while(1)
     {
         /* code */
+        memset(buff,0,BUFFER_SIZE);
         int byte = recv(socket_Client,buff,sizeof(buff)-1,0);
         if (byte <= 0) break;
         buff[BUFFER_SIZE] = '\0';
@@ -102,7 +103,7 @@ void *handlerClient(void *arg)
         }
         else{
             strcpy(buff,"Warrning Invalid format! Use: @username message");
-            sendMessge(buff, socket_Client);
+            send(socket_Client, buff, strlen(buff), 0);
         }
     }
     
@@ -145,7 +146,7 @@ void sendMessge(char* buff , int socket_fd){
             return;
         }
     }
-    strcpy(messege,"The client does not exist on the server\n");
+    strcpy(messege,"The client does not exist on the server");
     send(socket_fd, messege, strlen(messege), 0);
     pthread_mutex_unlock(&clients_mutex);
     
