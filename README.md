@@ -1,11 +1,13 @@
 ## Chat Server - Multi-Client Messaging System
 ### Introduce 
-    The Chat Server is a multi-client messaging system built in C, utilizing sockets, multithreading (pthread), and synchronization (mutex). It allows multiple clients to connect to a server and send private messages using the following format:
+
+The Chat Server is a multi-client messaging system built in C, utilizing sockets, multithreading (pthread), and synchronization (mutex). It allows multiple clients to connect to a server and send private messages using the following format:
 
 ###  Features
-    Supports multiple clients simultaneously.(10 clients)
-    Private messaging between clients.
-    The server manages the client list using mutex to avoid data conflicts.
+
+Supports multiple clients simultaneously.(10 clients)
+Private messaging between clients.
+The server manages the client list using mutex to avoid data conflicts.
 
 ### How to run the application 
     
